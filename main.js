@@ -1,18 +1,29 @@
 let myLibrary = [];
 
-function Book(author, title, category, pages, readStatus, review) {
-    this.author = author
+function Book(title, author, category, pages, readStatus, review) {
     this.title = title
+    this.author = author
     this.category = category
     this.pages = pages
     this.readStatus = readStatus
     this.review = review
 }
 
-function addBookToLibrary() {
-    // do stuff here
+function addBookToLibrary(title, author, category, pages, readStatus, review) {
+    const myBook = Object.create(Book);
+    myBook.title = title;
+    myBook.author = author;
+    myBook.category = category;
+    myBook.pages = pages;
+    myBook.readStatus = readStatus;
+    myBook.review = review;
+    myLibrary.push(myBook);
 }
 
 function getAllBooksFromLibrary() {
     //returns all books from the libaray
 }
+
+addBookToLibrary("the hobbit", "tolkien", 1000, "no", "n/a");
+addBookToLibrary("the Murder", "Smith", 128, "yes", "4");
+console.log(myLibrary);
