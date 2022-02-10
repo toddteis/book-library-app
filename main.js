@@ -24,6 +24,6 @@ function getAllBooksFromLibrary() {
     //returns all books from the libaray
 }
 
-addBookToLibrary("the hobbit", "tolkien", 1000, "no", "n/a");
-addBookToLibrary("the Murder", "Smith", 128, "yes", "4");
+addBookToLibrary("the hobbit", "tolkien", "Fantasy", 1000, "no", "n/a");
+addBookToLibrary("the Murder", "Smith", "Non fiction", 128, "yes", "4", );
 console.log(myLibrary);
