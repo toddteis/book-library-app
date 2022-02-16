@@ -1,3 +1,5 @@
+const display = document.querySelector('.display');
+
 let myLibrary = [];
 
 function Book(title, author, category, pages, readStatus, review) {
@@ -21,9 +23,21 @@ function addBookToLibrary(title, author, category, pages, readStatus, review) {
 }
 
 function getAllBooksFromLibrary() {
-    //returns all books from the libaray
+    let result = myLibrary;
+    return result;
 }
 
-addBookToLibrary("the hobbit", "tolkien", "Fantasy", 1000, "no", "n/a");
-addBookToLibrary("the Murder", "Smith", "Non fiction", 128, "yes", "4", );
-console.log(myLibrary);
+function createHtmlPage() {
+    let arr = getAllBooksFromLibrary();
+    for (let i = 0; i < arr.length; i++) {
+        let arr2 = Object.values(arr[i]);
+        for (let j = 0; j < arr2.length; j++) {
+            console.log(arr2[j]);
+        }
+    }
+}
+
+addBookToLibrary("The Hobbit", "Tolkien", "Fantasy", 1000, "no", "n/a");
+addBookToLibrary("The Murder", "Smith", "Non fiction", 128, "yes", "4", );
+// console.log(getAllBooksFromLibrary());
+createHtmlPage();
