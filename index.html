@@ -12,7 +12,7 @@
     <button>Add a Book</button>
     <form action="">
         <label for="title">Title:</label>
-        <input type="text" id="author" name="title" required>
+        <input type="text" id="title" name="title" required>
         <label for="author">Author:</label>
         <input type="text" id="author" name="author" required>
         <label for="category">Category:</label>
@@ -29,6 +29,7 @@
             <option value="true-crime">True Crime</option>
         </select>
         <label for="pages">pages:</label>
+        <input type="number" id="pages" min="0">
         <fieldset>
             <legend>Have Read</legend>
             <input type="radio" name="have-read" value="yes" id="have-read-1">
@@ -39,6 +40,7 @@
         <label for="review">Review:</label>
         <select name="review" id="review">
             <option value="">--Choose an option--</option>
+            <option value="not-read">Not read yet</option>
             <option value="one-star">1 Star</option>
             <option value="two-star">2 Stars</option>
             <option value="three-star">3 Stars</option>
