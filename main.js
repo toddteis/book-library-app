@@ -62,9 +62,13 @@ function createTable() {
     let allBooks = getAllBooksFromLibrary();
     for (let i = 0; i < allBooks.length; i++) {
         let bookValues = Object.values(allBooks[i]);
+        let elementTR = document.createElement('tr');
         for (let j = 0; j < bookValues.length; j++) {
-            console.log(bookValues[j]);       
+            let elementDT = document.createElement('td')
+            elementDT.textContent = bookValues[j];
+            elementTR.append(elementDT);
         }
+        display.append(elementTR);
     }
 }
 
