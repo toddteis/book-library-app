@@ -2,6 +2,9 @@ const display = document.querySelector('.display');
 
 let myLibrary = [];
 
+addBookToLibrary("The Hobbit", "Tolkien", "Fantasy", 1000, "no", "n/a");
+addBookToLibrary("The Murder", "Smith", "Non fiction", 128, "yes", "4", );
+
 function Book(title, author, category, pages, readStatus, review) {
     this.title = title
     this.author = author
@@ -28,24 +31,28 @@ function getAllBooksFromLibrary() {
 }
 
 // Test: add one book manually to the page.
+// test: with object.
 let tableRow = document.createElement('tr');
+let bookArr = myLibrary[0];
+console.log(bookArr);
+
 let tbTitle = document.createElement('td');
-tbTitle.textContent = 'The Hobbit';
+tbTitle.textContent = bookArr.title;
 tableRow.append(tbTitle);
 let tbAuthor = document.createElement('td');
-tbAuthor.textContent = 'Tolkien';
+tbAuthor.textContent = bookArr.author;
 tableRow.append(tbAuthor);
 let tbCategory = document.createElement('td');
-tbCategory.textContent = 'Fantasy';
+tbCategory.textContent = bookArr.category;
 tableRow.append(tbCategory);
 let tbPages = document.createElement('td');
-tbPages.textContent = 1000;
+tbPages.textContent = bookArr.pages;
 tableRow.append(tbPages);
 let tbReadStatus = document.createElement('td');
-tbReadStatus.textContent = 'no';
+tbReadStatus.textContent = bookArr.readStatus;
 tableRow.append(tbReadStatus);
 let tbReview = document.createElement('td');
-tbReview.textContent = 'no';
+tbReview.textContent = bookArr.review;
 tableRow.append(tbReview);
 console.log(tableRow);
 display.append(tableRow);
@@ -61,7 +68,6 @@ function createHtmlPage() {
     }
 }
 
-addBookToLibrary("The Hobbit", "Tolkien", "Fantasy", 1000, "no", "n/a");
-addBookToLibrary("The Murder", "Smith", "Non fiction", 128, "yes", "4", );
+
 // console.log(getAllBooksFromLibrary());
 createHtmlPage();
