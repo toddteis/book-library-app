@@ -30,34 +30,6 @@ function getAllBooksFromLibrary() {
     return result;
 }
 
-// Test: add one book manually to the page.
-// test: with object.
-// let tableRow = document.createElement('tr');
-// let bookArr =myLibrary[0];
-// console.log(bookArr);
-
-// let tbTitle = document.createElement('td');
-// tbTitle.textContent = bookArr.title;
-// tableRow.append(tbTitle);
-// let tbAuthor = document.createElement('td');
-// tbAuthor.textContent = bookArr.author;
-// tableRow.append(tbAuthor);
-// let tbCategory = document.createElement('td');
-// tbCategory.textContent = bookArr.category;
-// tableRow.append(tbCategory);
-// let tbPages = document.createElement('td');
-// tbPages.textContent = bookArr.pages;
-// tableRow.append(tbPages);
-// let tbReadStatus = document.createElement('td');
-// tbReadStatus.textContent = bookArr.readStatus;
-// tableRow.append(tbReadStatus);
-// let tbReview = document.createElement('td');
-// tbReview.textContent = bookArr.review;
-// tableRow.append(tbReview);
-// console.log(tableRow);
-// display.append(tableRow);
-
-
 function createTable() {
     let allBooks = getAllBooksFromLibrary();
     for (let i = 0; i < allBooks.length; i++) {
