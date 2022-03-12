@@ -10,9 +10,21 @@ addBookToLibrary("The Murder", "Smith", "Non fiction", 128, "yes", "4", );
 
 form.addEventListener('submit', (event) => {
     event.preventDefault();  // stop form from submitting
-    // do stuff
-    console.log(form);
-    // console.log(event);
+
+    // do some validation
+
+    // add to the library
+    addBookToLibrary(
+        form.title.value,
+        form.author.value,
+        form.category.value,
+        form.pages.value,
+        form.haveread.value,
+        form.review.value,
+    )
+
+    // recreate table in UI
+    createTable();
 })
 
 
@@ -43,6 +55,7 @@ function getAllBooksFromLibrary() {
 }
 
 function createTable() {
+    display.innerHTML="";
     let allBooks = getAllBooksFromLibrary();
     for (let i = 0; i < allBooks.length; i++) {
         let bookValues = Object.values(allBooks[i]);
