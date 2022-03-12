@@ -22,6 +22,9 @@ form.addEventListener('submit', (event) => {
         form.haveread.value,
         form.review.value,
     )
+    
+    // reset form
+    document.forms[0].reset();
 
     // recreate table in UI
     createTable();
