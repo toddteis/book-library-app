@@ -31,7 +31,12 @@ main {
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 1440px;
+    width: 375px;
+}
+
+h1 {
+    font-size: 2.5rem;
+    padding: 20px;
 }
 
 /* FOOTER */
