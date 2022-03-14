@@ -136,6 +136,12 @@ legend {
     background-color: white;
 }
 
+fieldset {
+    border-style: solid;
+    border: 1px solid var(--select-border);
+    border-radius: 2px;
+}
+
 .btn-submit, .btn-add-book {
     font-size: 1rem;
     padding: 4px;
