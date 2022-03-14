@@ -68,7 +68,7 @@ input {
     margin: 5px;
 }
 
-/* https://moderncss.dev/custom-select-styles-with-pure-css/ */
+/* drop downs styled by: https://moderncss.dev/custom-select-styles-with-pure-css/ */
 
 select {
     /* A reset of styles, including removing the default dropdown arrow */
@@ -142,22 +142,23 @@ legend {
     background-color: white;
 }
 
-.btn-submit {
+.btn-submit, .btn-add-book {
     font-size: 1rem;
     padding: 4px;
-    margin: 8px 5px 5px 5px;
     height: 2.5rem;
     font-weight: 500;
 }
 
 .btn-add-book {
     width: 78%;
-    font-size: 1rem;
-    padding: 4px;
     margin: 5px;
-    height: 2.5rem;
-    font-weight: 500;
 }
+
+.btn-submit {
+    margin: 8px 5px 8px 5px;
+}
+
+
 
 
 /* FOOTER */
