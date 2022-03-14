@@ -143,7 +143,7 @@ fieldset {
     border-radius: 2px;
 }
 
-.btn-submit, .btn-add-book {
+.btn-submit, .btn-add-book, .btn-cancel {
     font-size: 1rem;
     padding: 4px;
     height: 2.5rem;
@@ -155,8 +155,15 @@ fieldset {
     margin: 5px;
 }
 
-.btn-submit {
+.submit-cancel-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.btn-submit, .btn-cancel {
     margin: 8px 5px 8px 5px;
+    width: 130px;
+    /* 288     20px = 268 / 2 = 134px */
 }
 
 /* LIBRARY SECTION */
