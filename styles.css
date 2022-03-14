@@ -58,14 +58,11 @@ form {
 }
 
 label {
-    font-size: 0.75rem;
     margin: 8px 5px 3px 5px;
 }
 
-input {
+label, input {
     font-size: 0.75rem;
-    padding: 4px;
-    margin: 5px;
 }
 
 /* drop downs styled by: https://moderncss.dev/custom-select-styles-with-pure-css/ */
@@ -86,13 +83,15 @@ select {
     outline: none;
 }
 
-.select {
-    width: 96.5%;
-    /* height: 30px; */
-    border: 1px solid var(--select-border);
-    border-radius: 2px;
+.select, fieldset, input {
     padding: 4px;
     margin: 5px;
+}
+
+.select {
+    width: 96.5%;
+    border: 1px solid var(--select-border);
+    border-radius: 2px;
     font-size: 0.7955rem;
     cursor: pointer;
     line-height: 1.1;
@@ -130,11 +129,6 @@ select:focus + .focus {
 select::-ms-expand {
     display: none;
   }
-
-fieldset {
-    padding: 4px;
-    margin: 5px;
-}
 
 legend {
     font-size: 0.75rem;
