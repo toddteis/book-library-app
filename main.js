@@ -1,12 +1,21 @@
 const display = document.querySelector('.display');
 const form = document.getElementById('new-book');
+const addABook = document.getElementById('btn-add-book');
 
-// console.log(form);
+console.log(addABook);
 
 let myLibrary = [];
 
 addBookToLibrary("The Hobbit", "Tolkien", "Fantasy", 1000, "no", "n/a");
 addBookToLibrary("The Murder", "Smith", "Non fiction", 128, "yes", "4", );
+
+addABook.addEventListener('click', () => {
+    if(form.style.display === 'none') {
+        form.style.display = 'flex';
+    } else {
+        form.style.display = 'none';
+    }
+})
 
 form.addEventListener('submit', (event) => {
     event.preventDefault();  // stop form from submitting
