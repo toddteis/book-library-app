@@ -37,6 +37,9 @@ form.addEventListener('submit', (event) => {
 
     // recreate table in UI
     createTable();
+    
+    // hide form
+    form.style.display = 'none';
 })
 
 
