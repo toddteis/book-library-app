@@ -12,14 +12,12 @@ addBookToLibrary("The Murder", "Smith", "Non fiction", 128, "yes", "4", );
 cancelAddBook.addEventListener('click', () => {
     // hide form
     form.style.display = 'none';
+    addBook.style.display = 'block';
 })
 
 addBook.addEventListener('click', () => {
-    if(form.style.display === 'none') {
-        form.style.display = 'flex';
-    } else {
-        form.style.display = 'none';
-    }
+    form.style.display = 'flex';
+    addBook.style.display = 'none';
 })
 
 form.addEventListener('submit', (event) => {
@@ -45,6 +43,7 @@ form.addEventListener('submit', (event) => {
     
     // hide form
     form.style.display = 'none';
+    addBook.style.display = 'block';
 })
 
 
