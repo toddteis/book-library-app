@@ -299,8 +299,10 @@ tbody {
             width: 768px;
         } 
 
-        tbody {
-            font-size: 1rem;
+        table {
+            width: 95%;
+            letter-spacing: 1.2px;
+            font-size: 1.1rem;
         }
 
         caption {
@@ -312,13 +314,45 @@ tbody {
             width: 769px;
         }
 
-        table {
-            width: 95%;
-            letter-spacing: 1.2px;
-            font-size: 1.1rem;
+        tbody {
+            font-size: 1rem;
         }
 
         td, th {
             padding: 8px 14px;
+        }
+    }
+
+/* Medium Screens */
+
+    @media
+    only screen
+    and (min-width: 1025px)
+    and (max-width: 1440px) {
+
+        .library {
+            font-size: 1.2rem;
+            width: 1024px;
+        }
+
+        table {
+            width: 95%;
+            letter-spacing: 1.2px;
+            font-size: 1.4rem;
+        }
+
+        caption {
+            font-size: 2rem;
+            margin: 20px;
+            padding: 10px;
+            width: 1024px;
+        }
+
+        tbody {
+            font-size: 1.2rem;
+        }
+
+        td, th {
+            padding: 10px 16px;
         }
     }
