@@ -209,6 +209,17 @@ tbody {
     font-size: 0.6rem;
 }
 
+tr:nth-child(even) td {
+    border: none;
+    border-bottom: 1px solid #fff;
+    background: #f2f2f2;
+}
+
+tr:nth-child(odd) {
+    border: none;
+    background: #fff;
+}
+
 /* FOOTER */
 
 .attribution { 
@@ -246,17 +257,6 @@ tbody {
         tr {
         margin: 0 0 1rem 0;
         }
-
-        tr:nth-child(even) td {
-            border: none;
-            border-bottom: 1px solid #fff;
-            background: #f2f2f2;
-        }
-
-        tr:nth-child(odd) {
-            border: none;
-            background: #fff;
-        }
           
         td {
             /* Behave  like a "row" */
@@ -291,7 +291,12 @@ tbody {
 
 /* SMALL SCREENS */
 
-    @media only screen and (min-width: 769px) and (max-width: 1024px) {
+    @media only screen and (min-width: 769px) {
+        .add-a-book {
+            width: 440px;
+        }
+
+
 
         .library {
             font-size: 1rem;
@@ -316,15 +321,11 @@ tbody {
         tbody {
             font-size: 1rem;
         }
-
-        /* td, th {
-            padding: 8px 14px;
-        } */
     }
 
 /* Medium Screens */
 
-    @media only screen and (min-width: 1025px) and (max-width: 1440px) {
+    @media only screen and (min-width: 1025px) {
 
         .library {
             font-size: 1.2rem;
