@@ -66,6 +66,10 @@ label, input {
     font-size: 0.75rem;
 }
 
+input {
+    border: 1px solid var(--select-border);
+}
+
 /* drop downs styled by: https://moderncss.dev/custom-select-styles-with-pure-css/ */
 
 select {
@@ -114,7 +118,7 @@ select {
 
 select, .select::after {
     grid-area: select;
-  }
+}
 
 select:focus + .focus {
     position: absolute;
@@ -144,9 +148,9 @@ fieldset {
 }
 
 .btn-submit, .btn-add-book, .btn-cancel {
-    font-size: 1rem;
+    font-size: 0.8rem;
     padding: 4px;
-    height: 2.5rem;
+    height: 2rem;
     font-weight: 500;
 }
 
