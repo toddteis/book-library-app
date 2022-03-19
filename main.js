@@ -6,8 +6,10 @@ const cancelAddBook = document.getElementById('btn-cancel');
 
 let myLibrary = [];
 
-addBookToLibrary("The Hobbit", "Tolkien", "Fantasy", 1000, "no", "n/a");
-addBookToLibrary("The Murder", "Smith", "Non fiction", 128, "yes", "4", );
+addBookToLibrary("The Hobbit", "Tolkien", "Fantasy", 1000, "Not read", "Not read");
+addBookToLibrary("The Murder", "Smith", "Non fiction", 128, "Read", "4 stars", );
+addBookToLibrary("Winter in Coming", "J.T. Westwood", "Historical Fiction", 1266, "Read", "5 stars", );
+addBookToLibrary("Lower your golf score", "John Hoskison", "Self help", 108, "Not read", "Not read", );
 
 cancelAddBook.addEventListener('click', () => {
     // hide form
