@@ -330,7 +330,43 @@ tr:nth-child(odd) {
             padding: 25px;
             margin-top: 20px;
         }
+
+        .add-a-book {
+            width: 440px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 15px 0 15px 0;
+        }
+    
+        label {
+            /* font-size: ; */
+            margin: 10px 8px 4px 8px;
+        }
         
+        label, input {
+            font-size: 1rem;
+        }
+        
+        input {
+            border: 1px solid var(--select-border);
+        }
+        
+        .select, fieldset, input {
+            padding: 7px;
+            margin: 7px;
+        }
+        
+        .select {
+            font-size: 1rem;
+
+        }
+        
+        .select::after {
+            width: 0.9em;
+            height: 0.6em;
+          }
+
         .library {
             font-size: 1.2rem;
             width: 970px;
