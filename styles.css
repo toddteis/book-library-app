@@ -13,6 +13,14 @@
     --select-border: #D3D3D3;
     --select-focus: black;
     --select-arrow: var(--select-border);
+
+    --lightest: #e9f5db;
+    --light: #cfe1b9;
+    --med-light:#b5c99a;
+    --med-dark:#97a97c;
+    --dark:#87986a;
+    --med-darkest:#718355;
+
 }
 
 html {
@@ -21,6 +29,7 @@ html {
     font-family: 'Ubuntu', sans-serif;
     font-weight: 400;
     font-size: 16px;
+    background-color: var(--lightest);
 }
 
 body {
