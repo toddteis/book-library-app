@@ -364,6 +364,11 @@ tr:nth-child(odd) {
         input {
             border: 1px solid var(--select-border);
         }
+
+        .btn-submit, .btn-add-book, .btn-cancel {
+            font-size: 1rem;
+            height: 2.2rem;
+        }
         
         .select, fieldset, input {
             padding: 7px;
