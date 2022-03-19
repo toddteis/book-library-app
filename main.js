@@ -33,7 +33,7 @@ form.addEventListener('submit', (event) => {
         form.author.value,
         form.category.value,
         form.pages.value,
-        form.haveread.value,
+        form.status.value,
         form.review.value,
     )
     
