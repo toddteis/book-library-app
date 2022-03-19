@@ -19,7 +19,7 @@
     --med-light:#b5c99a;
     --med-dark:#97a97c;
     --dark:#87986a;
-    --med-darkest:#718355;
+    --darkest:#718355;
 
 }
 
@@ -157,10 +157,14 @@ fieldset {
 }
 
 .btn-submit, .btn-add-book, .btn-cancel {
+    background-color: var(--med-light);
+    color: black;
+    border: 1px solid var(--darkest);
     font-size: 0.8rem;
     padding: 4px;
     height: 2rem;
     font-weight: 500;
+    border-radius: 3px;
 }
 
 .btn-add-book {
@@ -210,7 +214,7 @@ td, th {
 }
 
 th {
-    background: #333;
+    background: var(--darkest);
     color:#fff
 }
 
@@ -221,12 +225,12 @@ tbody {
 tr:nth-child(even) td {
     border: none;
     border-bottom: 1px solid #fff;
-    background: #f2f2f2;
+    background: var(--light);
 }
 
 tr:nth-child(odd) {
     border: none;
-    background: #fff;
+    background: white;
 }
 
 /* FOOTER */
