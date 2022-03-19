@@ -35,13 +35,15 @@
                 </div>
                 <label for="pages">Pages:</label>
                 <input type="number" name="pages" id="pages" min="0" required>
-                <fieldset>
-                    <legend>Status</legend>
-                    <input type="radio" name="haveread" value="yes" id="have-read-1">
-                    <label for="haveread">Read</label>
-                    <input type="radio" name="haveread" value="no" id="have-read-2">
-                    <label for="haveread">Not Read</label>
-                </fieldset>
+                <label for="status">Status:</label>
+                <div class="select">
+                    <select name="status" id="status" required>
+                        <option value="">--Choose an option--</option>
+                        <option value="Read">Read</option>
+                        <option value="NotRead">Not Read</option>
+                    </select>
+                    <span class="focus"></span>
+                </div>
                 <label for="review">Review:</label>
                 <div class="select">
                     <select name="review" id="review" required>
