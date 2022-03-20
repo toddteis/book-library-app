@@ -100,14 +100,28 @@ function createTableBtn(id, type) {
     let elementBtn = document.createElement('button');
     if (type == 'edit') {
         elementBtn.textContent = 'Edit';
+        elementBtn.className = 'btn-table edit';
+        elementBtn.addEventListener('click', () => {
+            editBook(elementBtn.id);
+        });
     } else if (type == 'remove') {
         elementBtn.textContent = 'Remove';
+        elementBtn.className = 'btn-table remove';
+        elementBtn.addEventListener('click', () => {
+            removeBook(elementBtn.id);
+        });
     }
     elementBtn.value = id;
-    elementBtn.className = 'btn-table';
+    elementBtn.id = id;
     return elementBtn;
 }
 
+function editBook(id) {
+    console.log(id);
+}
 
+function removeBook(id) {
+    console.log(id);
+}
 
 createTable();
