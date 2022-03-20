@@ -156,7 +156,7 @@ fieldset {
     border-radius: 2px;
 }
 
-.btn-submit, .btn-add-book, .btn-cancel {
+.btn-submit, .btn-add-book, .btn-cancel, .btn-table {
     background-color: var(--med-light);
     color: black;
     border: 1px solid var(--darkest);
@@ -181,6 +181,12 @@ fieldset {
 .btn-submit, .btn-cancel {
     margin: 8px 5px 8px 5px;
     width: 130px;
+}
+
+.btn-table {
+    width: 100%;
+    height: 2rem;
+    font-size: 1rem;
 }
 
 /* LIBRARY SECTION */
@@ -289,6 +295,12 @@ tr:nth-child(odd) {
             width: 45%;
             padding-right: 10px;
             white-space: nowrap;
+        }
+
+        .btn-table {
+            width: 30%;
+            height: 1.35rem;
+            font-size: 0.7rem;
         }
 
 		/*
