@@ -301,6 +301,8 @@ tr:nth-child(odd) {
 		td:nth-of-type(4):before { content: "Pages"; }
 		td:nth-of-type(5):before { content: "Status"; }
 		td:nth-of-type(6):before { content: "Review"; }
+		td:nth-of-type(7):before { content: "Edit"; }
+		td:nth-of-type(8):before { content: "Remove"; }
 	}
 
 /* SMALL SCREENS */

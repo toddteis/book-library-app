@@ -7,9 +7,9 @@ const cancelAddBook = document.getElementById('btn-cancel');
 let myLibrary = [];
 
 addBookToLibrary("The Hobbit", "Tolkien", "Fantasy", 1000, "Not read", "Not read");
-addBookToLibrary("The Murder", "Smith", "Non fiction", 128, "Read", "4 stars", );
-addBookToLibrary("Winter in Coming", "J.T. Westwood", "Historical Fiction", 1266, "Read", "5 stars", );
-addBookToLibrary("Lower your golf score", "John Hoskison", "Self help", 108, "Not read", "Not read", );
+addBookToLibrary("The Murder", "Smith", "Non fiction", 128, "Read", "4 stars",);
+addBookToLibrary("Winter in Coming", "J.T. Westwood", "Historical Fiction", 1266, "Read", "5 stars",);
+addBookToLibrary("Lower your golf score", "John Hoskison", "Self help", 108, "Not read", "Not read",);
 
 cancelAddBook.addEventListener('click', () => {
     // hide form
@@ -36,13 +36,13 @@ form.addEventListener('submit', (event) => {
         form.status.value,
         form.review.value,
     )
-    
+
     // reset form
     document.forms[0].reset();
 
     // recreate table in UI
     createTable();
-    
+
     // hide form
     form.style.display = 'none';
     addBook.style.display = 'block';
@@ -76,7 +76,7 @@ function getAllBooksFromLibrary() {
 }
 
 function createTable() {
-    display.innerHTML="";
+    display.innerHTML = "";
     let allBooks = getAllBooksFromLibrary();
     for (let i = 0; i < allBooks.length; i++) {
         let bookValues = Object.values(allBooks[i]);
@@ -86,6 +86,12 @@ function createTable() {
             elementDT.textContent = bookValues[j];
             elementTR.append(elementDT);
         }
+        let elementDT = document.createElement('td')
+        elementDT.textContent = 'Edit';
+        elementTR.append(elementDT);
+        let elementDT2 = document.createElement('td');
+        elementDT2.textContent = 'Remove';
+        elementTR.append(elementDT2);
         display.append(elementTR);
     }
 }
