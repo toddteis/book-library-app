@@ -87,13 +87,27 @@ function createTable() {
             elementTR.append(elementDT);
         }
         let elementDT = document.createElement('td')
-        elementDT.textContent = 'Edit';
+        elementDT.append(createTableBtn(i, 'edit'));
         elementTR.append(elementDT);
         let elementDT2 = document.createElement('td');
-        elementDT2.textContent = 'Remove';
+        elementDT2.append(createTableBtn(i, 'remove'));
         elementTR.append(elementDT2);
         display.append(elementTR);
     }
 }
+
+function createTableBtn(id, type) {
+    let elementBtn = document.createElement('button');
+    if (type == 'edit') {
+        elementBtn.textContent = 'Edit';
+    } else if (type == 'remove') {
+        elementBtn.textContent = 'Remove';
+    }
+    elementBtn.value = id;
+    elementBtn.className = 'btn-table';
+    return elementBtn;
+}
+
+
 
 createTable();
