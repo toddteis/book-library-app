@@ -16,7 +16,7 @@ addBookToLibrary("Lower your golf score", "John Hoskison", "Self help", 108, "No
 createTable();
 
 updateBook.addEventListener('click', () => {
-    console.log('update book clicked' + Date.now);
+    console.log('update book clicked' + ' ' + Date.now());
 })
 
 cancelAddBook.addEventListener('click', () => {
