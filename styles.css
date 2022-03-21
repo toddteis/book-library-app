@@ -156,7 +156,7 @@ fieldset {
     border-radius: 2px;
 }
 
-.btn-submit, .btn-add-book, .btn-cancel, .btn-table {
+.btn-submit, .btn-add-book, .btn-cancel, .btn-update, .btn-table {
     background-color: var(--med-light);
     color: black;
     border: 1px solid var(--darkest);
@@ -178,9 +178,17 @@ fieldset {
     justify-content: space-between;
 }
 
-.btn-submit, .btn-cancel {
+.btn-submit, .btn-cancel, .btn-update {
     margin: 8px 5px 8px 5px;
     width: 130px;
+}
+
+.btn-submit {
+    display: block; /* used to show/hide button*/
+}
+
+.btn-update {
+    display: none; /* used to show/hide button*/
 }
 
 .btn-table {
@@ -380,7 +388,7 @@ tr:nth-child(odd) {
             border: 1px solid var(--select-border);
         }
 
-        .btn-submit, .btn-add-book, .btn-cancel {
+        .btn-submit, .btn-add-book, .btn-cancel, .btn-update {
             font-size: 1rem;
             height: 2.2rem;
         }

@@ -136,6 +136,8 @@ function editBook(id) {
     formFieldReadStatus.value = replaceSpaceWithDash(selectedBook.readStatus).toLowerCase();
     formFieldReview.value = replaceSpaceWithDash(selectedBook.review).toLowerCase();
 
+    // hide submit button & show update button.
+
     // on submission have fields update existing record.
 }
 
