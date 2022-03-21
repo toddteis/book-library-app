@@ -3,7 +3,9 @@ const form = document.getElementById('new-book');
 const addBook = document.getElementById('btn-add-book');
 const submitBook = document.getElementById('btn-submit')
 const cancelAddBook = document.getElementById('btn-cancel');
-const updateBook = document.getElementById('btn-update');
+const updateBookBtn = document.getElementById('btn-update');
+
+let updateBookId;
 
 
 let myLibrary = [];
@@ -15,8 +17,9 @@ addBookToLibrary("Lower your golf score", "John Hoskison", "Self help", 108, "No
 
 createTable();
 
-updateBook.addEventListener('click', () => {
+updateBookBtn.addEventListener('click', () => {
     console.log('update book clicked' + ' ' + Date.now());
+    updateBook(updateBookId);
 })
 
 cancelAddBook.addEventListener('click', () => {
@@ -122,13 +125,14 @@ function createTableBtn(id, type) {
 function editBook(id) {
     // get values with id.
     const selectedBook = myLibrary[id];
+    updateBookId = id;
 
     // show form
     toggleFormDisplay()
 
     // hide submit button & show update button.
     submitBook.style.display = 'none';
-    updateBook.style.display = 'block';
+    updateBookBtn.style.display = 'block';
 
     //populate fields with values
     const formFieldTitle = document.getElementById('title');
@@ -165,4 +169,8 @@ function toggleFormDisplay() {
 
 function replaceSpaceWithDash(str) {
     return str.replace(/\s/g, '-')
+}
+
+function updateBook(id) {
+    console.log(myLibrary[id]);
 }
