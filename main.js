@@ -7,7 +7,7 @@ const cancelAddBook = document.getElementById('btn-cancel');
 let myLibrary = [];
 
 addBookToLibrary("The Hobbit", "Tolkien", "Fantasy", 1000, "Not read", "Not read");
-addBookToLibrary("The Murder", "Smith", "Non fiction", 128, "Read", "4 stars",);
+addBookToLibrary("The Murder", "Smith", "Literary Fiction", 128, "Read", "4 stars",);
 addBookToLibrary("Winter in Coming", "J.T. Westwood", "Historical Fiction", 1266, "Read", "5 stars",);
 addBookToLibrary("Lower your golf score", "John Hoskison", "Self help", 108, "Not read", "Not read",);
 
@@ -120,14 +120,26 @@ function editBook(id) {
     // get values with id.
     const selectedBook = myLibrary[id];
 
-    console.log(selectedBook);
     // show form
     toggleFormDisplay()
 
-    // form.style.display = 'flex';
-    // addBook.style.display = 'none';
-
     //populate fields with values
+    const formFieldTitle = document.getElementById('title');
+    const formFieldAuthor = document.getElementById('author');
+    const formFieldCategory = document.getElementById('category');
+    const formFieldPages = document.getElementById('pages')
+    formFieldTitle.value = selectedBook.title;
+    formFieldAuthor.value = selectedBook.author;
+    const selectedBookCategory = replaceSpaceWithDash(selectedBook.category).toLowerCase();
+    console.log(selectedBookCategory);
+    // formFieldCategory.value = selectedBookCategory;
+    formFieldCategory.value = replaceSpaceWithDash(selectedBook.category).toLowerCase();
+    formFieldPages.value = selectedBook.pages;
+    // console.log(selectedBook.author);
+    // console.log(selectedBook.category);
+    // console.log(selectedBook.pages);
+    // console.log(selectedBook.readStatus);
+    // console.log(selectedBook.review);
 
     // on submission have fields update existing record.
 }
@@ -146,4 +158,8 @@ function toggleFormDisplay() {
         form.style.display = 'flex';
         addBook.style.display = 'none';
     }
+}
+
+function replaceSpaceWithDash(str) {
+    return str.replace(/\s/g, '-')
 }
