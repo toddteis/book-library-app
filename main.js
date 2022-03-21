@@ -116,7 +116,6 @@ function createTableBtn(id, type) {
 }
 
 function editBook(id) {
-    console.log(id);
     // get values with id.
     const selectedBook = myLibrary[id];
 
@@ -127,19 +126,15 @@ function editBook(id) {
     const formFieldTitle = document.getElementById('title');
     const formFieldAuthor = document.getElementById('author');
     const formFieldCategory = document.getElementById('category');
-    const formFieldPages = document.getElementById('pages')
+    const formFieldPages = document.getElementById('pages');
+    const formFieldReadStatus = document.getElementById('status');
+    const formFieldReview = document.getElementById('review');
     formFieldTitle.value = selectedBook.title;
     formFieldAuthor.value = selectedBook.author;
-    const selectedBookCategory = replaceSpaceWithDash(selectedBook.category).toLowerCase();
-    console.log(selectedBookCategory);
-    // formFieldCategory.value = selectedBookCategory;
     formFieldCategory.value = replaceSpaceWithDash(selectedBook.category).toLowerCase();
     formFieldPages.value = selectedBook.pages;
-    // console.log(selectedBook.author);
-    // console.log(selectedBook.category);
-    // console.log(selectedBook.pages);
-    // console.log(selectedBook.readStatus);
-    // console.log(selectedBook.review);
+    formFieldReadStatus.value = replaceSpaceWithDash(selectedBook.readStatus).toLowerCase();
+    formFieldReview.value = replaceSpaceWithDash(selectedBook.review).toLowerCase();
 
     // on submission have fields update existing record.
 }
