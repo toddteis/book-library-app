@@ -15,13 +15,11 @@ createTable();
 
 cancelAddBook.addEventListener('click', () => {
     // hide form
-    form.style.display = 'none';
-    addBook.style.display = 'block';
+    toggleFormDisplay();
 })
 
 addBook.addEventListener('click', () => {
-    form.style.display = 'flex';
-    addBook.style.display = 'none';
+    toggleFormDisplay();
 })
 
 form.addEventListener('submit', (event) => {
@@ -46,8 +44,7 @@ form.addEventListener('submit', (event) => {
     createTable();
 
     // hide form
-    form.style.display = 'none';
-    addBook.style.display = 'block';
+    toggleFormDisplay();
 })
 
 
@@ -143,14 +140,10 @@ function removeBook(id) {
 
 function toggleFormDisplay() {
     if (form.style.display == 'flex') {
-        // then hidden
         form.style.display = 'none';
         addBook.style.display = 'block';
-        console.log('form is showing')
     } else {
-        // then show
         form.style.display = 'flex';
         addBook.style.display = 'none';
-        console.log('form is hidden')
     }
 }
