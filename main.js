@@ -1,7 +1,9 @@
 const display = document.querySelector('.display');
 const form = document.getElementById('new-book');
 const addBook = document.getElementById('btn-add-book');
+const submitBook = document.getElementById('btn-submit')
 const cancelAddBook = document.getElementById('btn-cancel');
+const updateBook = document.getElementById('btn-update');
 
 
 let myLibrary = [];
@@ -24,8 +26,6 @@ addBook.addEventListener('click', () => {
 
 form.addEventListener('submit', (event) => {
     event.preventDefault();  // stop form from submitting
-
-    // do some validation
 
     // add to the library
     addBookToLibrary(
@@ -122,6 +122,10 @@ function editBook(id) {
     // show form
     toggleFormDisplay()
 
+    // hide submit button & show update button.
+    submitBook.style.display = 'none';
+    updateBook.style.display = 'block';
+
     //populate fields with values
     const formFieldTitle = document.getElementById('title');
     const formFieldAuthor = document.getElementById('author');
@@ -135,8 +139,6 @@ function editBook(id) {
     formFieldPages.value = selectedBook.pages;
     formFieldReadStatus.value = replaceSpaceWithDash(selectedBook.readStatus).toLowerCase();
     formFieldReview.value = replaceSpaceWithDash(selectedBook.review).toLowerCase();
-
-    // hide submit button & show update button.
 
     // on submission have fields update existing record.
 }
