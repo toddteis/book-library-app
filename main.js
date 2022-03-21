@@ -120,10 +120,37 @@ function createTableBtn(id, type) {
 
 function editBook(id) {
     console.log(id);
+    // get values with id.
+    const selectedBook = myLibrary[id];
+
+    console.log(selectedBook);
+    // show form
+    toggleFormDisplay()
+
+    // form.style.display = 'flex';
+    // addBook.style.display = 'none';
+
+    //populate fields with values
+
+    // on submission have fields update existing record.
 }
 
 function removeBook(id) {
     let elementIndex = id;
     myLibrary.splice(elementIndex, 1);
     createTable();
+}
+
+function toggleFormDisplay() {
+    if (form.style.display == 'flex') {
+        // then hidden
+        form.style.display = 'none';
+        addBook.style.display = 'block';
+        console.log('form is showing')
+    } else {
+        // then show
+        form.style.display = 'flex';
+        addBook.style.display = 'none';
+        console.log('form is hidden')
+    }
 }
