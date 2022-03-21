@@ -11,6 +11,8 @@ addBookToLibrary("The Murder", "Smith", "Non fiction", 128, "Read", "4 stars",);
 addBookToLibrary("Winter in Coming", "J.T. Westwood", "Historical Fiction", 1266, "Read", "5 stars",);
 addBookToLibrary("Lower your golf score", "John Hoskison", "Self help", 108, "Not read", "Not read",);
 
+createTable();
+
 cancelAddBook.addEventListener('click', () => {
     // hide form
     form.style.display = 'none';
@@ -121,7 +123,7 @@ function editBook(id) {
 }
 
 function removeBook(id) {
-    console.log(id);
+    let elementIndex = id;
+    myLibrary.splice(elementIndex, 1);
+    createTable();
 }
-
-createTable();
