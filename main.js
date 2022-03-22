@@ -12,10 +12,8 @@ const formFieldReadStatus = document.getElementById('status');
 const formFieldReview = document.getElementById('review');
 
 let updateBookId;
-
-
 let myLibrary = [];
-
+// Add some books
 addBookToLibrary("The Hobbit", "Tolkien", "Fantasy", 1000, "Not read", "Not read");
 addBookToLibrary("The Murder", "Smith", "Literary Fiction", 128, "Read", "4 stars",);
 addBookToLibrary("Winter in Coming", "J.T. Westwood", "Historical Fiction", 1266, "Read", "5 stars",);
@@ -27,6 +25,8 @@ updateBookBtn.addEventListener('click', () => {
     updateBook(updateBookId);
     form.reset();
     toggleFormDisplay();
+    submitBook.style.display = 'block';
+    updateBookBtn.style.display = 'none';
 })
 
 cancelAddBook.addEventListener('click', () => {
@@ -142,16 +142,12 @@ function editBook(id) {
     updateBookBtn.style.display = 'block';
 
     //populate fields with values
-
     formFieldTitle.value = selectedBook.title;
     formFieldAuthor.value = selectedBook.author;
     formFieldCategory.value = replaceSpaceWithDash(selectedBook.category).toLowerCase();
     formFieldPages.value = selectedBook.pages;
     formFieldReadStatus.value = replaceSpaceWithDash(selectedBook.readStatus).toLowerCase();
     formFieldReview.value = replaceSpaceWithDash(selectedBook.review).toLowerCase();
-
-    // on submission have fields update existing record.
-    // updateBook(updateBookId);
 }
 
 function removeBook(id) {
