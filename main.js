@@ -14,9 +14,9 @@ const formFieldReview = document.getElementById('review');
 let updateBookId;
 let myLibrary = [];
 // Add some books
-addBookToLibrary("The Hobbit", "Tolkien", "Fantasy", 1000, "Not read", "Not read");
-addBookToLibrary("The Murder", "Smith", "Literary Fiction", 128, "Read", "4 stars",);
-addBookToLibrary("Winter in Coming", "J.T. Westwood", "Historical Fiction", 1266, "Read", "5 stars",);
+addBookToLibrary("The Hobbit", "J R R Tolkien", "Fantasy", 400, "Read", "5 Stars");
+addBookToLibrary("Nabbing Ned Kelly", "David Dufty", "Historical Fiction", 424, "Read", "4 stars",);
+addBookToLibrary("Along came a Spider", "James Patterson", "Detective Mystery", 496, "Read", "5 stars",);
 addBookToLibrary("Lower your golf score", "John Hoskison", "Self help", 108, "Not read", "Not read",);
 
 createTable();
