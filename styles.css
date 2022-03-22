@@ -248,6 +248,10 @@ tr:nth-child(odd) {
     background: white;
 }
 
+ion-icon {
+    color: gold;
+}
+
 /* FOOTER */
 
 .attribution { 

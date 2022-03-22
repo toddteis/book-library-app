@@ -179,3 +179,7 @@ function updateBook(id) {
     myLibrary[id].review = formFieldReview.value;
     createTable();
 }
+
+function stringToStars(str) {
+    console.log("starssss");
+}
