@@ -4,6 +4,12 @@ const addBook = document.getElementById('btn-add-book');
 const submitBook = document.getElementById('btn-submit')
 const cancelAddBook = document.getElementById('btn-cancel');
 const updateBookBtn = document.getElementById('btn-update');
+const formFieldTitle = document.getElementById('title');
+const formFieldAuthor = document.getElementById('author');
+const formFieldCategory = document.getElementById('category');
+const formFieldPages = document.getElementById('pages');
+const formFieldReadStatus = document.getElementById('status');
+const formFieldReview = document.getElementById('review');
 
 let updateBookId;
 
@@ -18,8 +24,9 @@ addBookToLibrary("Lower your golf score", "John Hoskison", "Self help", 108, "No
 createTable();
 
 updateBookBtn.addEventListener('click', () => {
-    console.log('update book clicked' + ' ' + Date.now());
     updateBook(updateBookId);
+    form.reset();
+    toggleFormDisplay();
 })
 
 cancelAddBook.addEventListener('click', () => {
@@ -135,12 +142,7 @@ function editBook(id) {
     updateBookBtn.style.display = 'block';
 
     //populate fields with values
-    const formFieldTitle = document.getElementById('title');
-    const formFieldAuthor = document.getElementById('author');
-    const formFieldCategory = document.getElementById('category');
-    const formFieldPages = document.getElementById('pages');
-    const formFieldReadStatus = document.getElementById('status');
-    const formFieldReview = document.getElementById('review');
+
     formFieldTitle.value = selectedBook.title;
     formFieldAuthor.value = selectedBook.author;
     formFieldCategory.value = replaceSpaceWithDash(selectedBook.category).toLowerCase();
@@ -149,6 +151,7 @@ function editBook(id) {
     formFieldReview.value = replaceSpaceWithDash(selectedBook.review).toLowerCase();
 
     // on submission have fields update existing record.
+    // updateBook(updateBookId);
 }
 
 function removeBook(id) {
@@ -172,5 +175,11 @@ function replaceSpaceWithDash(str) {
 }
 
 function updateBook(id) {
-    console.log(myLibrary[id]);
+    myLibrary[id].title = formFieldTitle.value;
+    myLibrary[id].author = formFieldAuthor.value;
+    myLibrary[id].category = formFieldCategory.value;
+    myLibrary[id].pages = formFieldPages.value;
+    myLibrary[id].readStatus = formFieldReadStatus.value;
+    myLibrary[id].review = formFieldReview.value;
+    createTable();
 }
