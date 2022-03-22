@@ -96,8 +96,19 @@ function createTable() {
         let elementTR = document.createElement('tr');
         for (let j = 0; j < bookValues.length; j++) {
             let elementDT = document.createElement('td')
-            elementDT.textContent = bookValues[j];
-            elementTR.append(elementDT);
+            if (j == 5) {
+                console.log(bookValues[j]);
+                if (bookValues[j] == 'Not read') {
+                    elementDT.textContent = bookValues[j];
+                    elementTR.append(elementDT);
+                } else {
+                    elementDT.append(stringToStars(bookValues[j]));
+                    elementTR.append(elementDT);
+                }
+            } else {
+                elementDT.textContent = bookValues[j];
+                elementTR.append(elementDT);
+            }
         }
         let elementDT = document.createElement('td')
         elementDT.append(createTableBtn(i, 'edit'));
@@ -181,5 +192,22 @@ function updateBook(id) {
 }
 
 function stringToStars(str) {
-    console.log("starssss");
+    console.log(str + " " + "starssssss");
+    switch (str) {
+        case "1 Star":
+            console.log('strToStarts' + ' ' + str);
+            break;
+        case "2 Stars":
+            console.log('strToStarts' + ' ' + str);
+            break;
+        case "3 Stars":
+            console.log('strToStarts' + ' ' + str);
+            break;
+        case "4 Stars":
+            console.log('strToStarts' + ' ' + str);
+            break;
+        default:
+            console.log('strToStarts' + ' ' + str);
+            break;
+    }
 }
