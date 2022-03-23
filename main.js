@@ -154,10 +154,7 @@ function editBook(id) {
     formFieldAuthor.value = selectedBook.author;
     formFieldCategory.value = replaceSpaceWithDash(selectedBook.category).toLowerCase();
     formFieldPages.value = selectedBook.pages;
-    console.log(selectedBook.readStatus);
-    // formFieldReadStatus.value = replaceSpaceWithDash(selectedBook.readStatus);
     formFieldReadStatus.value = selectedBook.readStatus;
-    console.log(replaceSpaceWithDash(selectedBook.readStatus));
     formFieldReview.value = selectedBook.review;
 }
 
@@ -175,10 +172,6 @@ function toggleFormDisplay() {
         form.style.display = 'flex';
         addBook.style.display = 'none';
     }
-}
-
-function replaceSpaceWithDash(str) {
-    return str.replace(/\s/g, '-')
 }
 
 function updateBook(id) {
