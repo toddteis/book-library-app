@@ -240,7 +240,7 @@ tbody {
 tr:nth-child(even) td {
     border: none;
     border-bottom: 1px solid #fff;
-    background: var(--light);
+    background: lightslategray;
 }
 
 tr:nth-child(odd) {

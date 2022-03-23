@@ -14,9 +14,9 @@ const formFieldReview = document.getElementById('review');
 let updateBookId;
 let myLibrary = [];
 // Add some books
-addBookToLibrary("The Hobbit", "J R R Tolkien", "Fantasy", 400, "Read", "5 Stars");
-addBookToLibrary("Nabbing Ned Kelly", "David Dufty", "Historical Fiction", 424, "Read", "4 stars",);
-addBookToLibrary("Along came a Spider", "James Patterson", "Detective Mystery", 496, "Read", "5 stars",);
+addBookToLibrary("The Hobbit", "J R R Tolkien", "Fantasy", 400, "Read", "1 Star");
+addBookToLibrary("Nabbing Ned Kelly", "David Dufty", "Historical Fiction", 424, "Read", "3 Stars",);
+addBookToLibrary("Along came a Spider", "James Patterson", "Detective Mystery", 496, "Read", "5 Stars",);
 addBookToLibrary("Lower your golf score", "John Hoskison", "Self help", 108, "Not read", "Not read",);
 
 createTable();
@@ -97,7 +97,6 @@ function createTable() {
         for (let j = 0; j < bookValues.length; j++) {
             let elementDT = document.createElement('td')
             if (j == 5) {
-                console.log(bookValues[j]);
                 if (bookValues[j] == 'Not read') {
                     elementDT.textContent = bookValues[j];
                     elementTR.append(elementDT);
@@ -192,22 +191,45 @@ function updateBook(id) {
 }
 
 function stringToStars(str) {
-    console.log(str + " " + "starssssss");
+    let spanElement = document.createElement('div')
+    let ionIcon = document.createElement('ion-icon');
+    let ionIcon2 = document.createElement('ion-icon');
+    let ionIcon3 = document.createElement('ion-icon');
+    let ionIcon4 = document.createElement('ion-icon');
+    let ionIcon5 = document.createElement('ion-icon');
+    ionIcon.setAttribute('name', 'star');
+    ionIcon2.setAttribute('name', 'star');
+    ionIcon3.setAttribute('name', 'star');
+    ionIcon4.setAttribute('name', 'star');
+    ionIcon5.setAttribute('name', 'star');
+
     switch (str) {
         case "1 Star":
-            console.log('strToStarts' + ' ' + str);
+            spanElement.append(ionIcon);
             break;
         case "2 Stars":
-            console.log('strToStarts' + ' ' + str);
+            spanElement.append(ionIcon);
+            spanElement.append(ionIcon2);
             break;
         case "3 Stars":
-            console.log('strToStarts' + ' ' + str);
+            spanElement.append(ionIcon);
+            spanElement.append(ionIcon2);
+            spanElement.append(ionIcon3);
             break;
         case "4 Stars":
-            console.log('strToStarts' + ' ' + str);
+            spanElement.append(ionIcon);
+            spanElement.append(ionIcon2);
+            spanElement.append(ionIcon3);
+            spanElement.append(ionIcon4);
             break;
         default:
-            console.log('strToStarts' + ' ' + str);
+            spanElement.append(ionIcon);
+            spanElement.append(ionIcon2);
+            spanElement.append(ionIcon3);
+            spanElement.append(ionIcon4);
+            spanElement.append(ionIcon5);
             break;
     }
+
+    return spanElement;
 }
