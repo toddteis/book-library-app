@@ -17,7 +17,7 @@ let myLibrary = [];
 addBookToLibrary("The Hobbit", "J R R Tolkien", "Fantasy", 400, "Read", "1 Star");
 addBookToLibrary("Nabbing Ned Kelly", "David Dufty", "Historical Fiction", 424, "Read", "3 Stars",);
 addBookToLibrary("Along came a Spider", "James Patterson", "Detective Mystery", 496, "Read", "5 Stars",);
-addBookToLibrary("Lower your golf score", "John Hoskison", "Self help", 108, "Not read", "Not read",);
+addBookToLibrary("Lower your golf score", "John Hoskison", "Self help", 108, "Not Read", "Not Read",);
 
 createTable();
 
@@ -95,7 +95,7 @@ function createTable() {
         for (let j = 0; j < bookValues.length; j++) {
             let elementDT = document.createElement('td')
             if (j == 5) {
-                if (bookValues[j] == 'Not read') {
+                if (bookValues[j] == 'Not Read') {
                     elementDT.textContent = bookValues[j];
                     elementTR.append(elementDT);
                 } else {
@@ -154,12 +154,11 @@ function editBook(id) {
     formFieldAuthor.value = selectedBook.author;
     formFieldCategory.value = replaceSpaceWithDash(selectedBook.category).toLowerCase();
     formFieldPages.value = selectedBook.pages;
-    // formFieldReadStatus.value = replaceSpaceWithDash(selectedBook.readStatus).toLowerCase();
-    formFieldReadStatus.value = replaceSpaceWithDash(selectedBook.readStatus);
-
-    console.log('editBook() :' + ' ' + replaceSpaceWithDash(selectedBook.readStatus));
-
-    formFieldReview.value = replaceSpaceWithDash(selectedBook.review).toLowerCase();
+    console.log(selectedBook.readStatus);
+    // formFieldReadStatus.value = replaceSpaceWithDash(selectedBook.readStatus);
+    formFieldReadStatus.value = selectedBook.readStatus;
+    console.log(replaceSpaceWithDash(selectedBook.readStatus));
+    formFieldReview.value = selectedBook.review;
 }
 
 function removeBook(id) {
