@@ -30,6 +30,9 @@ updateBookBtn.addEventListener('click', () => {
 })
 
 cancelAddBook.addEventListener('click', () => {
+    // reset form
+    document.forms[0].reset();
+
     // hide form
     toggleFormDisplay();
 })
