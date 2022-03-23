@@ -17,7 +17,7 @@ let myLibrary = [];
 addBookToLibrary("The Hobbit", "J R R Tolkien", "Fantasy", 400, "Read", "1 Star");
 addBookToLibrary("Nabbing Ned Kelly", "David Dufty", "Historical Fiction", 424, "Read", "3 Stars",);
 addBookToLibrary("Along came a Spider", "James Patterson", "Detective Mystery", 496, "Read", "5 Stars",);
-addBookToLibrary("Lower your golf score", "John Hoskison", "Self help", 108, "Not Read", "Not Read",);
+addBookToLibrary("Lower your golf score", "John Hoskison", "Self Help", 108, "Not Read", "Not Read",);
 
 createTable();
 
@@ -152,7 +152,7 @@ function editBook(id) {
     //populate fields with values
     formFieldTitle.value = selectedBook.title;
     formFieldAuthor.value = selectedBook.author;
-    formFieldCategory.value = replaceSpaceWithDash(selectedBook.category).toLowerCase();
+    formFieldCategory.value = selectedBook.category;
     formFieldPages.value = selectedBook.pages;
     formFieldReadStatus.value = selectedBook.readStatus;
     formFieldReview.value = selectedBook.review;
