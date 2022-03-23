@@ -61,8 +61,6 @@ form.addEventListener('submit', (event) => {
     toggleFormDisplay();
 })
 
-
-
 function Book(title, author, category, pages, readStatus, review) {
     this.title = title
     this.author = author
@@ -156,7 +154,11 @@ function editBook(id) {
     formFieldAuthor.value = selectedBook.author;
     formFieldCategory.value = replaceSpaceWithDash(selectedBook.category).toLowerCase();
     formFieldPages.value = selectedBook.pages;
-    formFieldReadStatus.value = replaceSpaceWithDash(selectedBook.readStatus).toLowerCase();
+    // formFieldReadStatus.value = replaceSpaceWithDash(selectedBook.readStatus).toLowerCase();
+    formFieldReadStatus.value = replaceSpaceWithDash(selectedBook.readStatus);
+
+    console.log('editBook() :' + ' ' + replaceSpaceWithDash(selectedBook.readStatus));
+
     formFieldReview.value = replaceSpaceWithDash(selectedBook.review).toLowerCase();
 }
 
