@@ -16,13 +16,7 @@ const formFieldReview = document.getElementById('review');
 
 let updateBookId;
 let myLibrary = [];
-// Add some books
-addBookToLibrary("The Hobbit", "J R R Tolkien", "Fantasy", 400, "Read", "5 Star");
-addBookToLibrary("Nabbing Ned Kelly", "David Dufty", "Historical Fiction", 424, "Read", "3 Stars",);
-addBookToLibrary("Along came a Spider", "James Patterson", "Detective Mystery", 496, "Read", "4 Stars",);
-addBookToLibrary("Lower your golf score", "John Hoskison", "Self Help", 108, "Not Read", "Not Read",);
 
-createTable();
 
 updateBookBtn.addEventListener('click', () => {
     updateBook(updateBookId);
@@ -67,23 +61,19 @@ form.addEventListener('submit', (event) => {
     toggleFormDisplay();
 })
 
-function Book(title, author, category, pages, readStatus, review) {
-    this.title = title
-    this.author = author
-    this.category = category
-    this.pages = pages
-    this.readStatus = readStatus
-    this.review = review
+class Book {
+    constructor(title, author, category, pages, readStatus, review) {
+        this.title = title
+        this.author = author
+        this.category = category
+        this.pages = pages
+        this.readStatus = readStatus
+        this.review = review
+    }
 }
 
 function addBookToLibrary(title, author, category, pages, readStatus, review) {
-    const myBook = Object.create(Book);
-    myBook.title = title;
-    myBook.author = author;
-    myBook.category = category;
-    myBook.pages = pages;
-    myBook.readStatus = readStatus;
-    myBook.review = review;
+    const myBook = new Book(title, author, category, pages, readStatus, review);
     myLibrary.push(myBook);
 }
 
@@ -233,3 +223,11 @@ function stringToStars(str) {
 
     return spanElement;
 }
+
+// Add some books
+addBookToLibrary("The Hobbit", "J R R Tolkien", "Fantasy", 400, "Read", "5 Star");
+addBookToLibrary("Nabbing Ned Kelly", "David Dufty", "Historical Fiction", 424, "Read", "3 Stars",);
+addBookToLibrary("Along came a Spider", "James Patterson", "Detective Mystery", 496, "Read", "4 Stars",);
+addBookToLibrary("Lower your golf score", "John Hoskison", "Self Help", 108, "Not Read", "Not Read",);
+
+createTable();
