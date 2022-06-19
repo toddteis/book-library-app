@@ -63,14 +63,56 @@ form.addEventListener('submit', (event) => {
 
 class Book {
     constructor(title, author, category, pages, readStatus, review) {
-        this.title = title
-        this.author = author
-        this.category = category
-        this.pages = pages
-        this.readStatus = readStatus
-        this.review = review
+        this._title = title;
+        this._author = author;
+        this._category = category;
+        this._pages = pages;
+        this._readStatus = readStatus;
+        this._review = review;
     }
-}
+
+    getTitle() {
+        return this._title;
+    }
+    setTitle(title) {
+        this._title = title;
+    }
+
+    getAuthor() {
+        return this._author;
+    }
+    setAuthor(author) {
+        this._author = author;
+    }
+    
+    getCategory() {
+        return this._category;
+    }
+    setCategory(category) {
+        this._category = category;
+    }
+
+    getPages() {
+        return this._pages;
+    }
+    setPages(pages) {
+        this._pages = pages;
+    }
+
+    getReadStatus() {
+        return this._readStatus;
+    }
+    setReadStatus(status) {
+        this._readStatus = status;
+    }
+    
+    getReview() {
+        return this._review;
+    }
+    setReview(review) {
+        this._review = review;
+    }
+ }
 
 function addBookToLibrary(title, author, category, pages, readStatus, review) {
     const myBook = new Book(title, author, category, pages, readStatus, review);
