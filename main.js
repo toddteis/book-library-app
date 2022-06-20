@@ -188,12 +188,12 @@ function editBook(id) {
     updateBookBtn.style.display = 'block';
 
     //populate fields with values
-    formFieldTitle.value = selectedBook.title;
-    formFieldAuthor.value = selectedBook.author;
-    formFieldCategory.value = selectedBook.category;
-    formFieldPages.value = selectedBook.pages;
-    formFieldReadStatus.value = selectedBook.readStatus;
-    formFieldReview.value = selectedBook.review;
+    formFieldTitle.value = selectedBook.getTitle();
+    formFieldAuthor.value = selectedBook.getAuthor();
+    formFieldCategory.value = selectedBook.getCategory();
+    formFieldPages.value = selectedBook.getPages();
+    formFieldReadStatus.value = selectedBook.getReadStatus();
+    formFieldReview.value = selectedBook.getReview();
 }
 
 function removeBook(id) {
