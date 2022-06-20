@@ -1,3 +1,6 @@
+// This branch will convert constructors to classes
+
+
 const display = document.querySelector('.display');
 const form = document.getElementById('new-book');
 const addBook = document.getElementById('btn-add-book');
@@ -13,13 +16,7 @@ const formFieldReview = document.getElementById('review');
 
 let updateBookId;
 let myLibrary = [];
-// Add some books
-addBookToLibrary("The Hobbit", "J R R Tolkien", "Fantasy", 400, "Read", "5 Star");
-addBookToLibrary("Nabbing Ned Kelly", "David Dufty", "Historical Fiction", 424, "Read", "3 Stars",);
-addBookToLibrary("Along came a Spider", "James Patterson", "Detective Mystery", 496, "Read", "4 Stars",);
-addBookToLibrary("Lower your golf score", "John Hoskison", "Self Help", 108, "Not Read", "Not Read",);
 
-createTable();
 
 updateBookBtn.addEventListener('click', () => {
     updateBook(updateBookId);
@@ -64,23 +61,61 @@ form.addEventListener('submit', (event) => {
     toggleFormDisplay();
 })
 
-function Book(title, author, category, pages, readStatus, review) {
-    this.title = title
-    this.author = author
-    this.category = category
-    this.pages = pages
-    this.readStatus = readStatus
-    this.review = review
-}
+class Book {
+    constructor(title, author, category, pages, readStatus, review) {
+        this._title = title;
+        this._author = author;
+        this._category = category;
+        this._pages = pages;
+        this._readStatus = readStatus;
+        this._review = review;
+    }
+
+    getTitle() {
+        return this._title;
+    }
+    setTitle(title) {
+        this._title = title;
+    }
+
+    getAuthor() {
+        return this._author;
+    }
+    setAuthor(author) {
+        this._author = author;
+    }
+    
+    getCategory() {
+        return this._category;
+    }
+    setCategory(category) {
+        this._category = category;
+    }
+
+    getPages() {
+        return this._pages;
+    }
+    setPages(pages) {
+        this._pages = pages;
+    }
+
+    getReadStatus() {
+        return this._readStatus;
+    }
+    setReadStatus(status) {
+        this._readStatus = status;
+    }
+    
+    getReview() {
+        return this._review;
+    }
+    setReview(review) {
+        this._review = review;
+    }
+ }
 
 function addBookToLibrary(title, author, category, pages, readStatus, review) {
-    const myBook = Object.create(Book);
-    myBook.title = title;
-    myBook.author = author;
-    myBook.category = category;
-    myBook.pages = pages;
-    myBook.readStatus = readStatus;
-    myBook.review = review;
+    const myBook = new Book(title, author, category, pages, readStatus, review);
     myLibrary.push(myBook);
 }
 
@@ -153,12 +188,12 @@ function editBook(id) {
     updateBookBtn.style.display = 'block';
 
     //populate fields with values
-    formFieldTitle.value = selectedBook.title;
-    formFieldAuthor.value = selectedBook.author;
-    formFieldCategory.value = selectedBook.category;
-    formFieldPages.value = selectedBook.pages;
-    formFieldReadStatus.value = selectedBook.readStatus;
-    formFieldReview.value = selectedBook.review;
+    formFieldTitle.value = selectedBook.getTitle();
+    formFieldAuthor.value = selectedBook.getAuthor();
+    formFieldCategory.value = selectedBook.getCategory();
+    formFieldPages.value = selectedBook.getPages();
+    formFieldReadStatus.value = selectedBook.getReadStatus();
+    formFieldReview.value = selectedBook.getReview();
 }
 
 function removeBook(id) {
@@ -178,12 +213,12 @@ function toggleFormDisplay() {
 }
 
 function updateBook(id) {
-    myLibrary[id].title = formFieldTitle.value;
-    myLibrary[id].author = formFieldAuthor.value;
-    myLibrary[id].category = formFieldCategory.value;
-    myLibrary[id].pages = formFieldPages.value;
-    myLibrary[id].readStatus = formFieldReadStatus.value;
-    myLibrary[id].review = formFieldReview.value;
+    myLibrary[id].setTitle(formFieldTitle.value);
+    myLibrary[id].setAuthor(formFieldAuthor.value);
+    myLibrary[id].setCategory(formFieldCategory.value);
+    myLibrary[id].setPages(formFieldPages.value);
+    myLibrary[id].setReadStatus(formFieldReadStatus.value);
+    myLibrary[id].setReview(formFieldReview.value);
     createTable();
 }
 
@@ -230,3 +265,11 @@ function stringToStars(str) {
 
     return spanElement;
 }
+
+// Add some books
+addBookToLibrary("The Hobbit", "J R R Tolkien", "Fantasy", 400, "Read", "5 Star");
+addBookToLibrary("Nabbing Ned Kelly", "David Dufty", "Historical Fiction", 424, "Read", "3 Stars",);
+addBookToLibrary("Along came a Spider", "James Patterson", "Detective Mystery", 496, "Read", "4 Stars",);
+addBookToLibrary("Lower your golf score", "John Hoskison", "Self Help", 108, "Not Read", "Not Read",);
+
+createTable();
