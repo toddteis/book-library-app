@@ -213,12 +213,12 @@ function toggleFormDisplay() {
 }
 
 function updateBook(id) {
-    myLibrary[id].title = formFieldTitle.value;
-    myLibrary[id].author = formFieldAuthor.value;
-    myLibrary[id].category = formFieldCategory.value;
-    myLibrary[id].pages = formFieldPages.value;
-    myLibrary[id].readStatus = formFieldReadStatus.value;
-    myLibrary[id].review = formFieldReview.value;
+    myLibrary[id].setTitle(formFieldTitle.value);
+    myLibrary[id].setAuthor(formFieldAuthor.value);
+    myLibrary[id].setCategory(formFieldCategory.value);
+    myLibrary[id].setPages(formFieldPages.value);
+    myLibrary[id].setReadStatus(formFieldReadStatus.value);
+    myLibrary[id].setReview(formFieldReview.value);
     createTable();
 }
 
