@@ -3,7 +3,7 @@ Javascript project using objects an object constructors
 
 Using JavaScript, CSS & HTML
 
-Utilised: DOM manipulation, objects & constructors, JS HTML generation, forms, tables, CSS Grid, CSS Flexbox.
+Utilised: DOM manipulation, objects & constructors(Refactored to Classes), JS HTML generation, forms, tables, CSS Grid, CSS Flexbox.
 
 Acknowledgements
   - Drop down forms styling adapted from modern.div article: https://moderncss.dev/custom-select-styles-with-pure-css/
